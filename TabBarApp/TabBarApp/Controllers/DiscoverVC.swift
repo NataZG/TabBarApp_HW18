@@ -9,21 +9,23 @@ import UIKit
 
 class DiscoverVC: UIViewController {
 
+    @IBOutlet weak var labeltext: UILabel!
+
+    @IBOutlet weak var button: UIButton!
+    var name = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        labeltext.text = "Nothing here"
+        setUpButton()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard segue.identifier == "goToSaved" else { return }
+        guard let destination = segue.destination as? SavedVC else { return }
+        destination.name = "No Saved Items"
     }
-    */
 
+    private func setUpButton() {
+        button.setTitle("OK", for: .normal)
+    }
 }
