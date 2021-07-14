@@ -13,6 +13,7 @@ protocol HomeVCDelegate: AnyObject {
 
 class HomeVC: UIViewController, HomeVCDelegate {
 
+    @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var button: UIButton!
 
     override func viewDidLoad() {
@@ -28,17 +29,17 @@ class HomeVC: UIViewController, HomeVCDelegate {
     }
 
     func update(text: String) {
-        button.setTitle(text, for: .normal)
+        homeLabel.text = text
     }
 
     @IBAction func buttonTapped(_ sender: UIButton) {
-    
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let discoverVC = storyboard.instantiateViewController(identifier: "DiscoverVC")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(discoverVC)
     }
 
     private func setUpButton() {
-        button.setTitle("Discover", for: .normal)
+        button.setTitle("GO!", for: .normal)
     }
 }

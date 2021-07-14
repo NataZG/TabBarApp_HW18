@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-342" y="-13"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="dTn-xh-OaY">
             <objects>
                 <navigationController id="jKC-bP-Y1l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="C7D-6I-Rbp"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="camera" catalog="system" id="C7D-6I-Rbp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PI9-KF-JCq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,39 +52,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tur-V4-QNk">
-                                <rect key="frame" x="137" y="424" width="140" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="GYk-Kq-wCl" eventType="touchUpInside" id="xSW-wl-hZJ"/>
-                                    <segue destination="dDU-mX-fUl" kind="show" identifier="goToDiscover" id="HMo-5e-sZi"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-1n-XjM">
+                                <rect key="frame" x="164" y="391" width="86" height="115"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u04-ZE-7ue">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tur-V4-QNk">
+                                        <rect key="frame" x="0.0" y="67" width="86" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="GYk-Kq-wCl" eventType="touchUpInside" id="xSW-wl-hZJ"/>
+                                            <segue destination="dDU-mX-fUl" kind="show" identifier="goToDiscover" id="HMo-5e-sZi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lTJ-uc-nKZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tur-V4-QNk" firstAttribute="top" secondItem="lTJ-uc-nKZ" secondAttribute="top" constant="336" id="Fpi-Im-79I"/>
-                            <constraint firstItem="lTJ-uc-nKZ" firstAttribute="trailing" secondItem="tur-V4-QNk" secondAttribute="trailing" constant="137" id="bgH-EV-kkF"/>
-                            <constraint firstItem="lTJ-uc-nKZ" firstAttribute="bottom" secondItem="tur-V4-QNk" secondAttribute="bottom" constant="341" id="iTl-4A-0mH"/>
-                            <constraint firstItem="tur-V4-QNk" firstAttribute="leading" secondItem="lTJ-uc-nKZ" secondAttribute="leading" constant="137" id="rR7-Mx-vdC"/>
+                            <constraint firstItem="dgm-1n-XjM" firstAttribute="leading" secondItem="lTJ-uc-nKZ" secondAttribute="leading" constant="164" id="7vv-w0-8Zq"/>
+                            <constraint firstItem="dgm-1n-XjM" firstAttribute="top" secondItem="lTJ-uc-nKZ" secondAttribute="top" constant="303" id="HVj-me-M9F"/>
+                            <constraint firstItem="lTJ-uc-nKZ" firstAttribute="bottom" secondItem="dgm-1n-XjM" secondAttribute="bottom" constant="307" id="l1D-Wp-fSz"/>
+                            <constraint firstItem="lTJ-uc-nKZ" firstAttribute="trailing" secondItem="dgm-1n-XjM" secondAttribute="trailing" constant="164" id="s6M-7L-b5c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="svx-iz-6C5"/>
                     <connections>
                         <outlet property="button" destination="tur-V4-QNk" id="fML-Zj-RYc"/>
+                        <outlet property="homeLabel" destination="u04-ZE-7ue" id="GYu-cq-qub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLd-GS-CFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1046.376811594203" y="1413.6160714285713"/>
         </scene>
-        <!--Item-->
+        <!--Discover-->
         <scene sceneID="CZj-Ra-RNL">
             <objects>
                 <navigationController id="ajO-cG-dsV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0v1-Ri-Kgu"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="0v1-Ri-Kgu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E91-ij-h8T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,11 +109,11 @@
             </objects>
             <point key="canvasLocation" x="-342" y="717"/>
         </scene>
-        <!--Item-->
+        <!--Saved-->
         <scene sceneID="Q7h-Tg-85r">
             <objects>
                 <navigationController id="2N8-oj-qmI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JRi-0i-yZG"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="folder" catalog="system" id="JRi-0i-yZG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tGb-to-B1U">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -210,10 +222,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DAO-BH-B04"/>
-        <segue reference="HMo-5e-sZi"/>
+        <segue reference="MZm-t8-sBP"/>
+        <segue reference="Ucx-9U-Wnw"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

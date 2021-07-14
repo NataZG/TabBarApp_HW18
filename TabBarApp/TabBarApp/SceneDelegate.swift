@@ -41,18 +41,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        guard let _ = (scene as? UIWindowScene) else { return }
+
+        // add these lines
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let rootVCAfterAppFolded = storyboard.instantiateViewController(identifier: "DiscoverVC")
+        window?.rootViewController = rootVCAfterAppFolded
     }
 
     func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
         if let window = self.window {
-                  window.rootViewController = vc
-                  // adding animation
-                  UIView.transition(with: window,
-                                    duration: 0.8,
-                                    options: .transitionCurlDown,
-                                    animations: nil)
-             }
+            window.rootViewController = vc
+            // adding animation
+            UIView.transition(with: window,
+                duration: 0.8,
+                options: .transitionCurlDown,
+                animations: nil)
         }
-    
+    }
+
 }
 
